@@ -1,0 +1,19 @@
+node_modules
+dist
+coverage
+
+*.log
+
+.nx/**/*
+dist
+.pnpm-store
+
+*.local
+
+# files to be removed
+rm--*
+*.vitest-temp.json
+
+
+.env*
+!.env.example

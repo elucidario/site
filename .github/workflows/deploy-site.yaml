@@ -1,0 +1,63 @@
+name: Deploy site
+
+on:
+  workflow_call:
+    inputs:
+      should_deploy:
+        description: "Should deploy the site?"
+        required: true
+        type: boolean
+
+  workflow_dispatch:
+    inputs:
+      should_deploy:
+        description: "Should deploy the site?"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if should deploy
+        run: 'echo "Should deploy: ${{ inputs.should_deploy }}"'
+
+  build-and-deploy:
+    if: ${{ inputs.should_deploy == true || inputs.should_deploy == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build:site
+        env:
+          VITE_LEAD_URL: ${{ vars.VITE_LEAD_URL }}
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: apps/site/dist/client # The folder the action should deploy.
+
+  exit:
+    if: ${{ inputs.should_deploy == false || inputs.should_deploy == 'false' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exit
+        run: echo "Nothing to deploy."

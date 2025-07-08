@@ -1,0 +1,41 @@
+name: Version bump
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      has_changeset: ${{ steps.changeset.outputs.hasChangesets }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: install
+        run: pnpm install
+
+      - name: release
+        uses: changesets/action@v1
+        id: changeset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    needs: version
+    uses: elucidario/elucidario.art/.github/workflows/deploy-site.yaml@main
+    with:
+      should_deploy: ${{ needs.version.outputs.has_changeset == 'false' || needs.version.outputs.has_changeset == false }}

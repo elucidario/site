@@ -33,11 +33,11 @@ jobs:
           VITE_LEAD_URL: ${{ vars.VITE_LEAD_URL }}
           VITE_GA_ID: ${{ vars.VITE_GA_ID }}
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: ./dist/client
+          path: dist/client
 
   deploy:
     runs-on: ubuntu-latest

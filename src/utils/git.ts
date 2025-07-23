@@ -28,7 +28,8 @@ export async function getLastUpdateDate(file: string) {
         console.error(
             `Erro ao obter a data da última atualização de "${file}": ${error}`,
         );
-        return null;
+        // Return current date as fallback when git is not available
+        return new Date().toISOString();
     }
 }
 
@@ -52,6 +53,7 @@ export async function getCreationDate(file: string) {
         }
     } catch (error) {
         console.error(`Erro ao obter a data da criação de "${file}": ${error}`);
-        return null;
+        // Return current date as fallback when git is not available
+        return new Date().toISOString();
     }
 }

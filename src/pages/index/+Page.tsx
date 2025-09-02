@@ -135,12 +135,6 @@ export default function Page() {
                             "Baseado no Linked-art, modelo de dados interoperável do CIDOC-ICOM",
                         cta: "Conheça",
                     },
-                    {
-                        title: "Open-source",
-                        description:
-                            "Auditável, customizável e implantação sob demanda",
-                        cta: "Inscreva-se",
-                    },
                 ]}
             />
             <Section<Person>
@@ -156,7 +150,7 @@ export default function Page() {
                     "justify-center",
                     "px-4",
                     "pt-4",
-                    "pb-16",
+                    "pb-16"
                 )}
                 metadata={{
                     "@context": "https://schema.org",
@@ -194,7 +188,7 @@ export default function Page() {
 
                         "flex",
                         "flex-col",
-                        "md:flex-row",
+                        "md:flex-row"
                     )}
                     style={{
                         background:
@@ -213,7 +207,7 @@ export default function Page() {
                             "w-fit",
                             "lg:min-w-60",
                             "justify-center",
-                            "items-center",
+                            "items-center"
                         )}
                     >
                         <Image
@@ -225,7 +219,7 @@ export default function Page() {
                                 "size-fit",
                                 "max-w-60",
                                 "max-h-60",
-                                "rounded-full",
+                                "rounded-full"
                             )}
                         />
                         <Heading
@@ -240,7 +234,7 @@ export default function Page() {
                                 className={cn(
                                     "font-mono",
                                     "text-sm",
-                                    "lg:text-base",
+                                    "lg:text-base"
                                 )}
                             >
                                 {"henrique@elucidario.art"}
@@ -255,7 +249,7 @@ export default function Page() {
                                     className={cn(
                                         "font-mono",
                                         "text-sm",
-                                        "lg:text-base",
+                                        "lg:text-base"
                                     )}
                                 >
                                     {title}
@@ -272,7 +266,7 @@ export default function Page() {
                             "flex",
                             "flex-col",
                             "gap-4",
-                            "lg:text-lg",
+                            "lg:text-lg"
                         )}
                     >
                         <Text>

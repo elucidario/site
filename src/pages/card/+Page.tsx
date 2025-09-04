@@ -26,14 +26,14 @@ export default function Page() {
         <>
             <Main className="h-screen flex flex-col">
                 <Header />
-                <div className="flex flex-col gap-4 max-w-md w-full h-full mx-auto">
+                <div className="flex flex-col gap-4 max-w-md w-full h-full mx-auto mt-8 px-8">
                     <div className="flex gap-4 h-fit">
                         <Image
                             src={"webp/henrique-godinho.webp"}
                             width={300}
                             height={300}
                             alt="Henrique Godinho"
-                            className={cn("size-48", "rounded-full")}
+                            className={cn("size-24", "rounded-full")}
                         />
                         <div className="flex flex-col justify-end items-start">
                             <Heading

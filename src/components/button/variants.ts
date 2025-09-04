@@ -55,7 +55,29 @@ export const buttonVariants = cva(
                     "dark:bg-zinc-300/40",
                     "dark:hover:bg-zinc-100/40",
                 ],
-                link: ["text-primary", "underline-offset-4", "hover:underline"],
+                link: [
+                    "text-primary",
+                    "underline-offset-4",
+                    "hover:underline",
+
+                    "text-primary-dark",
+                    "dark:text-primary-light",
+
+                    "hover:text-secondary-dark",
+                    "hover:dark:text-secondary-light",
+
+                    "hover:underline",
+                    "underline-offset-2",
+
+                    "ring-offset-secondary-light",
+                    "dark:ring-offset-secondary-dark",
+
+                    "focus-visible:outline-none",
+                    "focus-visible:ring-2",
+                    "focus-visible:ring-ring",
+                    "focus-visible:ring-offset-2",
+                    "inline-block",
+                ],
                 icon: "h-10 w-10",
             },
             size: {
@@ -69,5 +91,5 @@ export const buttonVariants = cva(
             variant: "default",
             size: "default",
         },
-    },
+    }
 );

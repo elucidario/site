@@ -54,7 +54,7 @@ export function Header({
                     "lg:max-w-[500px]",
                     "relative",
                     "mt-6",
-                    "mb-10",
+                    "mb-10"
                 )}
                 animate={{
                     scale: (1 - y / 100) * 0.5 + 0.8,

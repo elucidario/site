@@ -6,7 +6,13 @@ export function Text({ ref, children, className, ...props }: TextProps) {
         <p
             ref={ref}
             {...props}
-            className={cn("font-sans", "text-base", "md:text-lg", className)}
+            className={cn(
+                "font-sans",
+                "text-base",
+                "text-dark dark:text-light",
+                "md:text-lg",
+                className
+            )}
         >
             {children}
         </p>

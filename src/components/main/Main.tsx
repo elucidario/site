@@ -13,7 +13,7 @@ export function Main({ children, className, metadata, ...props }: MainProps) {
                 "z-10",
                 "bg-light",
                 "dark:bg-dark",
-                className,
+                className
             )}
         >
             {metadata && <JsonLD<WebPage> head={true} data={metadata} />}

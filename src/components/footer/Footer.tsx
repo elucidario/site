@@ -2,7 +2,7 @@ import { cn } from "@/utils";
 import { FooterProps } from "./types";
 import { Logo, Button, Text } from "@/components";
 
-export function Footer({ ref, className, ...props }: FooterProps) {
+export function Footer({ ref, className, cta, ...props }: FooterProps) {
     return (
         <footer
             ref={ref}
@@ -64,9 +64,11 @@ export function Footer({ ref, className, ...props }: FooterProps) {
                             em ativo desenvolvimento. Cadastre-se para receber
                             novidades em primeira mão!
                         </Text>
-                        <Button variant={"pb"} className="w-fit" asChild>
-                            <a href={"#cta-newsletter"}>Quero novidades!</a>
-                        </Button>
+                        {cta && (
+                            <Button variant={"pb"} className="w-fit" asChild>
+                                <a href={cta.href}>{cta.label}</a>
+                            </Button>
+                        )}
                     </div>
                     <div
                         className={cn(

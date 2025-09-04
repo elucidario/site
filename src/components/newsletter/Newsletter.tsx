@@ -28,7 +28,10 @@ export function Newsletter<T extends Record<string, unknown>>({
 
         const redirUrl = `${redirectionUrl}${
             addValuesToParams
-                ? `?${new URLSearchParams({ ...(data as Record<string, string>), ...(additionalParams as Record<string, string>) })}`
+                ? `?${new URLSearchParams({
+                      ...(data as Record<string, string>),
+                      ...(additionalParams as Record<string, string>),
+                  })}`
                 : ""
         }`;
 
@@ -103,7 +106,7 @@ export function Newsletter<T extends Record<string, unknown>>({
 
                 "border-b-4",
                 "border-light",
-                "dark:border-dark",
+                "dark:border-dark"
             )}
         >
             <div
@@ -134,7 +137,7 @@ export function Newsletter<T extends Record<string, unknown>>({
 
                     "shadow-2xl",
                     "shadow-secondary-light",
-                    "dark:shadow-secondary-dark",
+                    "dark:shadow-secondary-dark"
                 )}
             >
                 <div
@@ -144,7 +147,7 @@ export function Newsletter<T extends Record<string, unknown>>({
                         "flex",
                         "flex-col",
                         "gap-4",
-                        "justify-center",
+                        "justify-center"
                     )}
                 >
                     <AnimatePresence>
@@ -213,7 +216,7 @@ export function Newsletter<T extends Record<string, unknown>>({
                         "lg:w-3/5",
                         "flex",
                         "flex-col",
-                        "gap-4",
+                        "gap-4"
                     )}
                 >
                     <Form

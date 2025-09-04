@@ -1,0 +1,31 @@
+import { Link } from "@/components";
+import { ContactRound } from "lucide-react";
+
+export function VCard() {
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Henrique Godinho
+N;CHARSET=UTF-8:;Henrique;Godinho;;
+GENDER:M
+BDAY:19891221
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:henrique@elucidario.art
+TEL;TYPE=CELL:+5511994167130
+ORG;CHARSET=UTF-8:Elucidario.art
+URL;type=WORK;CHARSET=UTF-8:https://elucidario.art
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/hgodinho
+END:VCARD
+`;
+
+    return (
+        <Link
+            variant={"pb"}
+            size={"lg"}
+            href={`data:text/vcard;charset=utf-8,${encodeURIComponent(vCard)}`}
+            className="w-full flex gap-2"
+            download={"henrique-godinho.vcf"}
+        >
+            <ContactRound />
+            <span>Adicionar aos contatos</span>
+        </Link>
+    );
+}

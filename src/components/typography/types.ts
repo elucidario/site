@@ -7,7 +7,7 @@ export type LinkType = {
 };
 
 export type LinkProps = React.PropsWithChildren<
-    React.HTMLAttributes<HTMLAnchorElement> &
+    React.AnchorHTMLAttributes<HTMLAnchorElement> &
         LinkType & {
             active?: boolean;
             external?: boolean;

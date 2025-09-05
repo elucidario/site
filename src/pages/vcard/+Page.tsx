@@ -68,6 +68,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="h-full mt-24 flex flex-col gap-8">
+                        <VCard />
                         {links.map((link) => (
                             <Link
                                 key={link.href}
@@ -79,9 +80,6 @@ export default function Page() {
                                 {link.title}
                             </Link>
                         ))}
-                    </div>
-                    <div className="pb-24">
-                        <VCard />
                     </div>
                 </div>
             </Main>
